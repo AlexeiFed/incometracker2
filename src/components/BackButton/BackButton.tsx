@@ -5,7 +5,6 @@ import styles from "./BackButton.module.scss";
 
 export function BackButton() {
   const router = useRouter();
-
   return (
     <button className={styles.button} onClick={() => router.back()}>
       <svg
@@ -26,4 +25,3 @@ export function BackButton() {
     </button>
   );
 }
-

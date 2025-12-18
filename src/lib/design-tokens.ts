@@ -29,7 +29,8 @@ export const designTokens = {
     full: "9999px",
   },
   typography: {
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif",
+    fontFamily:
+      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif",
     fontSize: {
       xs: "12px",
       sm: "14px",
@@ -57,4 +58,3 @@ export const designTokens = {
     desktop: "1024px",
   },
 } as const;
-

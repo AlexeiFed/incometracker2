@@ -13,4 +13,3 @@ export function PageHeader({ title }: PageHeaderProps) {
     </header>
   );
 }
-
