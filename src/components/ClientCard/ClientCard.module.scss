@@ -1,0 +1,60 @@
+@import "@/styles/variables";
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-surface;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-md;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-height: 80px;
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: $shadow-sm;
+  }
+}
+
+.content {
+  flex: 1;
+}
+
+.name {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+}
+
+.total {
+  font-size: $font-size-base;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.actionButton {
+  background: none;
+  border: none;
+  padding: $spacing-xs;
+  cursor: pointer;
+  color: $color-text-secondary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+
+  &:active {
+    color: $color-text-primary;
+  }
+}
+

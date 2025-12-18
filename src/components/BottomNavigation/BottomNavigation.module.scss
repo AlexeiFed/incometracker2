@@ -1,0 +1,45 @@
+@import "@/styles/variables";
+
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $color-surface;
+  padding: $spacing-sm $spacing-md;
+  border-top: 1px solid $color-border;
+  z-index: 100;
+  gap: $spacing-xs;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+  text-decoration: none;
+  color: $color-text-secondary;
+  transition: color 0.2s;
+
+  &:active,
+  &[aria-current="page"] {
+    color: $color-secondary;
+  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-normal;
+}
+

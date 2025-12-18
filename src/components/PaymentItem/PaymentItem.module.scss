@@ -1,0 +1,63 @@
+@import "@/styles/variables";
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-md;
+  border-bottom: 1px solid $color-border;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.content {
+  flex: 1;
+}
+
+.amount {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  margin-bottom: $spacing-xs;
+}
+
+.date {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.comment {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-top: $spacing-xs;
+  font-style: italic;
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.actionButton {
+  background: none;
+  border: none;
+  padding: $spacing-xs;
+  cursor: pointer;
+  color: $color-text-secondary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+
+  &:active:not(:disabled) {
+    color: $color-text-primary;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+

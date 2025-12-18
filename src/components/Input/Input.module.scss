@@ -1,0 +1,37 @@
+@import "@/styles/variables";
+
+.container {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding: $spacing-md;
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  font-size: $font-size-base;
+  color: $color-text-primary;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+
+  &.error {
+    border-color: $color-error;
+  }
+
+  &::placeholder {
+    color: $color-text-secondary;
+  }
+}
+
+.errorText {
+  display: block;
+  margin-top: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $color-error;
+}
+

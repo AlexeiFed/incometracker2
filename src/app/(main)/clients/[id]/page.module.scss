@@ -1,0 +1,24 @@
+@import "@/styles/variables";
+
+.container {
+  min-height: 100vh;
+  background-color: $color-background;
+  padding-bottom: 100px;
+}
+
+.content {
+  padding: $spacing-md;
+}
+
+.loading,
+.error,
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-size: $font-size-lg;
+  color: $color-text-secondary;
+  padding: $spacing-md;
+}
+
