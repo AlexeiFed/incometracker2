@@ -1,0 +1,43 @@
+@import "@/styles/variables";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+  padding: $spacing-md;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  gap: $spacing-md;
+  margin-bottom: $spacing-md;
+  flex-shrink: 0;
+}
+
+.incomeCard {
+  flex: 2;
+}
+
+.yearSelector {
+  flex: 1;
+}
+
+.tableContainer {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-size: $font-size-lg;
+  color: $color-text-secondary;
+}
+

@@ -1,0 +1,2 @@
+export { MonthlyIncomeTable } from "./MonthlyIncomeTable";
+

@@ -1,0 +1,17 @@
+@import "@/styles/variables";
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  background-color: $color-secondary;
+  padding: $spacing-md;
+  color: $color-text-light;
+}
+
+.title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-medium;
+  margin: 0;
+}
+

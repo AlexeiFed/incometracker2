@@ -1,0 +1,42 @@
+@import "@/styles/variables";
+
+.container {
+  min-height: 100vh;
+  background-color: $color-background;
+  padding-bottom: 100px;
+}
+
+.form {
+  padding: $spacing-md;
+}
+
+.error {
+  color: $color-error;
+  font-size: $font-size-sm;
+  margin-bottom: $spacing-md;
+  text-align: center;
+}
+
+.submitButton {
+  width: 100%;
+  background-color: $color-primary;
+  color: $color-text-light;
+  padding: $spacing-md $spacing-lg;
+  border-radius: $radius-md;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: $spacing-lg;
+
+  &:active:not(:disabled) {
+    background-color: $color-primary-dark;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+

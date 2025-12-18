@@ -1,0 +1,25 @@
+@import "@/styles/variables";
+
+.card {
+  background-color: $color-surface;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-sm;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.label {
+  font-size: $font-size-base;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+}
+
+.amount {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+}
+

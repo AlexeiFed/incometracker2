@@ -1,0 +1,36 @@
+@import "@/styles/variables";
+
+.section {
+  margin-bottom: $spacing-lg;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-primary;
+  color: $color-text-light;
+  padding: $spacing-md;
+  border-radius: $radius-md $radius-md 0 0;
+  font-weight: $font-weight-medium;
+}
+
+.monthName {
+  font-size: $font-size-base;
+  text-transform: lowercase;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.total {
+  font-size: $font-size-base;
+}
+
+.payments {
+  background-color: $color-surface;
+  border-radius: 0 0 $radius-md $radius-md;
+  overflow: hidden;
+}
+

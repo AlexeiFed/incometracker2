@@ -1,0 +1,19 @@
+@import "@/styles/variables";
+
+.field {
+  margin-bottom: $spacing-lg;
+}
+
+.label {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-xs;
+  font-weight: $font-weight-medium;
+}
+
+.required {
+  color: $color-error;
+  margin-left: 2px;
+}
+

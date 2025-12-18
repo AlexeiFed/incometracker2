@@ -1,0 +1,30 @@
+@import "@/styles/variables";
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  width: 100%;
+  background-color: $color-primary;
+  color: $color-text-light;
+  padding: $spacing-md $spacing-lg;
+  border-radius: $radius-md;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: $spacing-xl;
+
+  &:active {
+    background-color: $color-primary-dark;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+

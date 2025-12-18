@@ -1,0 +1,32 @@
+@import "@/styles/variables";
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: $color-surface;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  margin-bottom: $spacing-md;
+  box-shadow: $shadow-sm;
+}
+
+.icon {
+  color: $color-text-secondary;
+  margin-right: $spacing-sm;
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: $font-size-base;
+  color: $color-text-primary;
+  outline: none;
+
+  &::placeholder {
+    color: $color-text-secondary;
+  }
+}
+
