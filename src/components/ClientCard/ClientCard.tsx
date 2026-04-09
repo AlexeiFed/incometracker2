@@ -7,6 +7,7 @@ interface ClientCardProps {
   totalPayments: number;
   onEdit?: () => void;
   onDelete?: () => void;
+  onRestore?: () => void;
   isArchived?: boolean;
 }
 
@@ -16,6 +17,7 @@ export function ClientCard({
   totalPayments,
   onEdit,
   onDelete,
+  onRestore,
   isArchived = false,
 }: ClientCardProps) {
   const formattedTotal = new Intl.NumberFormat("ru-RU").format(totalPayments);
@@ -33,6 +35,41 @@ export function ClientCard({
         </div>
       </div>
       <div className={styles.actions}>
+        {isArchived && onRestore && (
+          <button
+            className={styles.actionButton}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              onRestore();
+            }}
+            aria-label="Восстановить из архива"
+            type="button"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.16667 8.33333V4.16667H8.33333"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M3.33333 12.5C4.16667 14.5833 6.25 16.25 8.75 16.25C12.0833 16.25 14.7917 13.5417 14.7917 10.2083C14.7917 6.875 12.0833 4.16667 8.75 4.16667C6.45833 4.16667 4.5 5.45833 3.54167 7.29167"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        )}
         {!isArchived && (
           <button
             className={styles.actionButton}
@@ -42,6 +79,7 @@ export function ClientCard({
               onEdit?.();
             }}
             aria-label="Редактировать"
+            type="button"
           >
           <svg
             width="20"
@@ -85,6 +123,7 @@ export function ClientCard({
             onDelete?.();
           }}
           aria-label={isArchived ? "Удалить навсегда" : "Удалить"}
+          type="button"
         >
           <svg
             width="20"

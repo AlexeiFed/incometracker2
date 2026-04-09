@@ -6,7 +6,11 @@ import { SearchBar } from "@/components/SearchBar";
 import { ClientCard } from "@/components/ClientCard";
 import { useArchiveStore } from "@/stores/archiveStore";
 import { useIncomeStore } from "@/stores/incomeStore";
-import { permanentlyDeleteClient } from "@/lib/firebaseService";
+import {
+  permanentlyDeleteClient,
+  restoreClient,
+} from "@/lib/firebaseService";
+import { useClientStore } from "@/stores/clientStore";
 import styles from "./page.module.scss";
 
 export default function ArchivePage() {
@@ -17,6 +21,7 @@ export default function ArchivePage() {
     removeArchivedClient,
   } = useArchiveStore();
   const { incomes, loadIncomes, removeClientIncomes } = useIncomeStore();
+  const { loadClients } = useClientStore();
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -51,6 +56,18 @@ export default function ArchivePage() {
       client.name?.toLowerCase().includes(query)
     );
   }, [clientsWithTotals, searchQuery]);
+
+  const handleRestore = async (id: string) => {
+    try {
+      removeArchivedClient(id);
+      await restoreClient(id);
+      await Promise.all([loadArchivedClients(), loadClients()]);
+    } catch (error) {
+      console.error("Failed to restore client:", error);
+      await Promise.all([loadArchivedClients(), loadClients()]);
+      alert("Не удалось восстановить клиента");
+    }
+  };
 
   const handlePermanentDelete = async (id: string, name: string) => {
     if (
@@ -103,6 +120,7 @@ export default function ArchivePage() {
                 id={client.id}
                 name={client.name}
                 totalPayments={client.totalPayments}
+                onRestore={() => handleRestore(client.id)}
                 onDelete={() => handlePermanentDelete(client.id, client.name)}
                 isArchived
               />

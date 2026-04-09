@@ -143,6 +143,17 @@ export async function archiveClient(id: string): Promise<void> {
   }
 }
 
+export async function restoreClient(id: string): Promise<void> {
+  try {
+    await updateDoc(doc(db, "clients", id), {
+      archived: false,
+    });
+  } catch (error) {
+    console.error("Error restoring client:", error);
+    throw error;
+  }
+}
+
 export async function permanentlyDeleteClient(
   id: string,
   clientName: string

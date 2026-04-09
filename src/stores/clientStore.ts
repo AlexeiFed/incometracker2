@@ -54,10 +54,5 @@ export const useClientStore = create<ClientState>((set, get) => ({
       clients: state.clients.filter((client) => client.id !== id),
     }));
   },
-  removeArchivedClient: (id: string) => {
-    set((state) => ({
-      clients: state.clients.filter((client) => client.id !== id),
-    }));
-  },
 }));
 
